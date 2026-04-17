@@ -1,100 +1,122 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
-import KineticText from "@/components/KineticText";
-import Marquee from "@/components/Marquee";
 import { useParallax } from "@/hooks/useParallax";
 import { ASSETS, PERSON, CONTACT, OBSZARY } from "@/data/site";
 
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const portraitRef = useParallax<HTMLDivElement>(0.06);
+  const portraitRef = useParallax<HTMLDivElement>(0.05);
+
+  const goToContact = () => {
+    if (location.pathname !== "/") navigate("/#kontakt");
+    else document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-soft">
-        {/* Animowany ornament w tle */}
+      {/* HERO — editorial, asymetryczny */}
+      <section className="relative overflow-hidden bg-gradient-hero">
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-          <div className="absolute -left-24 top-1/4 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl animate-blob" />
-          <div className="absolute -right-32 bottom-0 h-[520px] w-[520px] rounded-full bg-primary/15 blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
-          <svg
-            className="absolute -right-40 top-10 h-[640px] w-[640px] animate-spin-slow text-primary/20"
-            viewBox="0 0 200 200"
-            fill="none"
-          >
-            <circle cx="100" cy="100" r="98" stroke="currentColor" strokeWidth="0.3" strokeDasharray="2 4" />
-            <circle cx="100" cy="100" r="78" stroke="currentColor" strokeWidth="0.3" />
-            <circle cx="100" cy="100" r="58" stroke="currentColor" strokeWidth="0.3" strokeDasharray="1 3" />
-          </svg>
+          <div className="absolute -left-32 top-1/3 h-[500px] w-[500px] rounded-full bg-primary/[0.07] blur-3xl animate-blob" />
+          <div
+            className="absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-primary/[0.08] blur-3xl animate-blob"
+            style={{ animationDelay: "5s" }}
+          />
         </div>
 
-        <div className="container-prose relative grid items-center gap-14 py-20 md:grid-cols-12 md:gap-10 md:py-28">
-          <div className="md:col-span-7 md:pr-8">
-            <p className="eyebrow animate-fade-in">Gabinet psychologiczny</p>
-            <h1 className="mt-6 font-display text-5xl font-light leading-[1.02] tracking-tight md:text-7xl animate-fade-up">
-              {PERSON.name}
+        <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden>
+          <div className="container-prose relative h-full">
+            <div className="absolute left-6 top-0 h-full w-px bg-border/40 md:left-10" />
+            <div className="absolute right-6 top-0 h-full w-px bg-border/40 md:right-10" />
+          </div>
+        </div>
+
+        <div className="container-prose relative grid items-center gap-16 py-24 md:grid-cols-12 md:gap-12 md:py-32 lg:py-40">
+          <div className="md:col-span-7 md:pr-4">
+            <div className="flex items-center gap-4 animate-fade-in">
+              <span className="h-px w-12 bg-primary" />
+              <p className="eyebrow !tracking-[0.3em]">Gabinet psychologiczny</p>
+            </div>
+
+            <h1 className="mt-10 font-display text-[3.5rem] font-extralight leading-[0.95] tracking-[-0.02em] md:text-[6rem] lg:text-[7.5rem]">
+              <span className="block animate-fade-up" style={{ animationDelay: "100ms" }}>
+                {PERSON.name.split(" ")[0]}
+              </span>
+              <span
+                className="block font-light text-primary animate-fade-up"
+                style={{ animationDelay: "300ms", fontFamily: "Georgia, serif", fontStyle: "italic" }}
+              >
+                {PERSON.name.split(" ").slice(1).join(" ")}
+              </span>
             </h1>
 
-            {/* Kinetyczna typografia: słowo po słowie */}
-            <h2 className="mt-8 max-w-3xl font-display text-2xl font-light leading-snug tracking-tight text-foreground/90 md:text-4xl lg:text-[2.75rem]">
-              <KineticText
-                text={PERSON.title}
-                delayStart={400}
-                staggerMs={120}
-                splitBy="word"
-              />
-            </h2>
+            <div
+              className="mt-12 flex flex-wrap items-baseline gap-x-5 gap-y-2 animate-fade-up"
+              style={{ animationDelay: "600ms" }}
+            >
+              <span className="font-display text-2xl font-light tracking-tight md:text-4xl lg:text-[2.75rem]">psycholog</span>
+              <span className="text-primary/50">·</span>
+              <span className="font-display text-2xl font-light tracking-tight md:text-4xl lg:text-[2.75rem]">psychoterapeuta</span>
+              <span className="text-primary/50">·</span>
+              <span className="font-display text-2xl font-light tracking-tight md:text-4xl lg:text-[2.75rem]">psychoonkolog</span>
+            </div>
 
             <p
-              className="mt-8 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg animate-fade-up"
-              style={{ animationDelay: "1400ms" }}
+              className="mt-12 max-w-md text-base leading-relaxed text-foreground/70 animate-fade-up"
+              style={{ animationDelay: "800ms" }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tworzę przestrzeń
-              spokoju, w której można w bezpieczny sposób przyjrzeć się temu, co trudne —
-              i odnaleźć własne zasoby.
+              Tworzę przestrzeń spokoju, w której można w bezpieczny sposób przyjrzeć się
+              temu, co trudne — i odnaleźć własne zasoby.
             </p>
+
             <div
-              className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up"
-              style={{ animationDelay: "1600ms" }}
+              className="mt-12 flex flex-wrap items-center gap-8 animate-fade-up"
+              style={{ animationDelay: "1000ms" }}
             >
               <button
-                onClick={() => {
-                  if (location.pathname !== "/") navigate("/#kontakt");
-                  else document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-500 hover:shadow-elegant hover:-translate-y-0.5"
+                onClick={goToContact}
+                className="group inline-flex items-center gap-3 rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background transition-all duration-500 hover:bg-primary hover:-translate-y-0.5"
               >
                 Umów spotkanie
                 <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
               </button>
               <Link to="/o-mnie" className="link-underline text-sm font-medium text-foreground/80">
-                Poznaj mnie
+                Poznaj mnie →
               </Link>
             </div>
           </div>
 
           <div className="md:col-span-5">
             <div className="relative animate-scale-in">
-              <div className="absolute -left-6 -top-6 h-full w-full rounded-sm bg-primary/10" />
-              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-primary/15 blur-2xl" />
+              <div className="absolute -left-4 -top-10 z-20 font-display text-7xl font-extralight text-primary/20 md:-left-12 md:-top-16 md:text-9xl">
+                01
+              </div>
+              <div className="absolute -right-2 top-8 z-20 rotate-90 origin-top-right hidden md:block">
+                <span className="text-[10px] uppercase tracking-[0.4em] text-foreground/50">
+                  portret · MMXXV
+                </span>
+              </div>
+              <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
               <div ref={portraitRef} className="will-change-transform">
                 <img
                   src={ASSETS.heroPortrait}
                   alt={`Portret — ${PERSON.name}, psycholog`}
                   width={1024}
                   height={1280}
-                  className="relative z-10 aspect-[4/5] w-full rounded-sm object-cover shadow-elegant"
+                  className="relative z-10 aspect-[4/5] w-full object-cover grayscale-[15%] shadow-elegant"
                 />
               </div>
+              <p className="mt-6 max-w-[280px] font-display text-sm font-light italic leading-relaxed text-foreground/60">
+                „Słuchanie jest formą obecności,
+                <br />
+                obecność — formą troski."
+              </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* MARQUEE — wartości */}
-      <Marquee items={["spokój", "uważność", "bezpieczeństwo", "zrozumienie", "obecność", "zaufanie"]} />
 
       {/* INTRO / O DZIAŁALNOŚCI */}
       <section className="container-narrow py-24 md:py-32">
