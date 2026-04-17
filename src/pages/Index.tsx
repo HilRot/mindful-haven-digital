@@ -20,7 +20,7 @@ const Index = () => {
               {PERSON.name}
             </h1>
             <p
-              className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+              className="mt-8 max-w-2xl font-display text-2xl font-light leading-snug tracking-tight text-foreground/90 md:text-4xl lg:text-[2.75rem] animate-fade-up"
               style={{ animationDelay: "120ms" }}
             >
               {PERSON.title}
