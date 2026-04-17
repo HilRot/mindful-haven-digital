@@ -1,33 +1,55 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import KineticText from "@/components/KineticText";
+import Marquee from "@/components/Marquee";
+import { useParallax } from "@/hooks/useParallax";
 import { ASSETS, PERSON, CONTACT, OBSZARY } from "@/data/site";
 
 const Index = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const portraitRef = useParallax<HTMLDivElement>(0.06);
 
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-soft">
-        <div className="container-prose grid items-center gap-14 py-20 md:grid-cols-12 md:gap-10 md:py-28">
+        {/* Animowany ornament w tle */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+          <div className="absolute -left-24 top-1/4 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl animate-blob" />
+          <div className="absolute -right-32 bottom-0 h-[520px] w-[520px] rounded-full bg-primary/15 blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
+          <svg
+            className="absolute -right-40 top-10 h-[640px] w-[640px] animate-spin-slow text-primary/20"
+            viewBox="0 0 200 200"
+            fill="none"
+          >
+            <circle cx="100" cy="100" r="98" stroke="currentColor" strokeWidth="0.3" strokeDasharray="2 4" />
+            <circle cx="100" cy="100" r="78" stroke="currentColor" strokeWidth="0.3" />
+            <circle cx="100" cy="100" r="58" stroke="currentColor" strokeWidth="0.3" strokeDasharray="1 3" />
+          </svg>
+        </div>
+
+        <div className="container-prose relative grid items-center gap-14 py-20 md:grid-cols-12 md:gap-10 md:py-28">
           <div className="md:col-span-7 md:pr-8">
             <p className="eyebrow animate-fade-in">Gabinet psychologiczny</p>
-            <h1
-              className="mt-6 font-display text-5xl font-light leading-[1.02] tracking-tight md:text-7xl animate-fade-up"
-            >
+            <h1 className="mt-6 font-display text-5xl font-light leading-[1.02] tracking-tight md:text-7xl animate-fade-up">
               {PERSON.name}
             </h1>
-            <p
-              className="mt-8 max-w-2xl font-display text-2xl font-light leading-snug tracking-tight text-foreground/90 md:text-4xl lg:text-[2.75rem] animate-fade-up"
-              style={{ animationDelay: "120ms" }}
-            >
-              {PERSON.title}
-            </p>
+
+            {/* Kinetyczna typografia: słowo po słowie */}
+            <h2 className="mt-8 max-w-3xl font-display text-2xl font-light leading-snug tracking-tight text-foreground/90 md:text-4xl lg:text-[2.75rem]">
+              <KineticText
+                text={PERSON.title}
+                delayStart={400}
+                staggerMs={120}
+                splitBy="word"
+              />
+            </h2>
+
             <p
               className="mt-8 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg animate-fade-up"
-              style={{ animationDelay: "220ms" }}
+              style={{ animationDelay: "1400ms" }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tworzę przestrzeń
               spokoju, w której można w bezpieczny sposób przyjrzeć się temu, co trudne —
@@ -35,7 +57,7 @@ const Index = () => {
             </p>
             <div
               className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up"
-              style={{ animationDelay: "320ms" }}
+              style={{ animationDelay: "1600ms" }}
             >
               <button
                 onClick={() => {
@@ -47,10 +69,7 @@ const Index = () => {
                 Umów spotkanie
                 <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
               </button>
-              <Link
-                to="/o-mnie"
-                className="link-underline text-sm font-medium text-foreground/80"
-              >
+              <Link to="/o-mnie" className="link-underline text-sm font-medium text-foreground/80">
                 Poznaj mnie
               </Link>
             </div>
@@ -60,17 +79,22 @@ const Index = () => {
             <div className="relative animate-scale-in">
               <div className="absolute -left-6 -top-6 h-full w-full rounded-sm bg-primary/10" />
               <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-primary/15 blur-2xl" />
-              <img
-                src={ASSETS.heroPortrait}
-                alt={`Portret — ${PERSON.name}, psycholog`}
-                width={1024}
-                height={1280}
-                className="relative z-10 aspect-[4/5] w-full rounded-sm object-cover shadow-elegant"
-              />
+              <div ref={portraitRef} className="will-change-transform">
+                <img
+                  src={ASSETS.heroPortrait}
+                  alt={`Portret — ${PERSON.name}, psycholog`}
+                  width={1024}
+                  height={1280}
+                  className="relative z-10 aspect-[4/5] w-full rounded-sm object-cover shadow-elegant"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* MARQUEE — wartości */}
+      <Marquee items={["spokój", "uważność", "bezpieczeństwo", "zrozumienie", "obecność", "zaufanie"]} />
 
       {/* INTRO / O DZIAŁALNOŚCI */}
       <section className="container-narrow py-24 md:py-32">
@@ -131,6 +155,26 @@ const Index = () => {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MANIFEST */}
+      <section className="relative overflow-hidden bg-background">
+        <div className="container-prose py-32 md:py-44">
+          <Reveal><p className="eyebrow">Manifest</p></Reveal>
+          <div className="mt-10">
+            <Reveal delay={80}>
+              <p className="font-display text-3xl font-light leading-[1.15] tracking-tight md:text-6xl lg:text-[5rem]">
+                Wierzę, że <em className="not-italic text-primary">rozmowa</em> potrafi
+                więcej niż słowa.
+                <br className="hidden md:block" />
+                Że <em className="not-italic text-primary">cisza</em> bywa początkiem
+                zrozumienia,
+                <br className="hidden md:block" />
+                a <em className="not-italic text-primary">obecność</em> — formą troski.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
