@@ -33,7 +33,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="container-prose relative grid items-center gap-16 py-24 md:grid-cols-12 md:gap-12 md:py-32 lg:py-40">
+        <div className="container-prose relative grid items-center gap-16 pb-24 pt-12 md:grid-cols-12 md:gap-12 md:pb-32 md:pt-16 lg:pb-40 lg:pt-20">
           <div className="md:col-span-7 md:pr-4">
             <div className="flex items-center gap-4 animate-fade-in">
               <span className="h-px w-12 bg-primary" />

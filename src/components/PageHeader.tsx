@@ -10,7 +10,7 @@ interface Props {
 const PageHeader = ({ eyebrow, title, intro, index }: Props) => (
   <section className="relative overflow-hidden bg-gradient-hero border-b border-border/60">
     <div className="pointer-events-none absolute -right-32 -top-20 h-[420px] w-[420px] rounded-full bg-primary/[0.08] blur-3xl animate-blob" aria-hidden />
-    <div className="container-prose relative py-24 md:py-32">
+    <div className="container-prose relative pb-24 pt-12 md:pb-32 md:pt-16">
       <div className="flex items-start justify-between gap-8">
         <div className="max-w-3xl">
           {eyebrow && (
