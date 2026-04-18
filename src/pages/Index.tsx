@@ -91,8 +91,8 @@ const Index = () => {
           <div className="md:col-span-5">
             <div className="relative animate-scale-in md:-mr-6 lg:-mr-12">
               <div className="absolute -bottom-8 -right-8 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
-              <div className="absolute -left-4 -top-4 z-0 h-full w-full border border-primary/40" aria-hidden />
               <div ref={portraitRef} className="relative will-change-transform">
+                <div className="absolute -left-4 -top-4 z-0 h-full w-full border border-primary/40" aria-hidden />
                 <img
                   src={ASSETS.heroPortrait}
                   alt={`Portret — ${PERSON.name}, psycholog`}
