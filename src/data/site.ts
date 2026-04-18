@@ -1,10 +1,17 @@
 // Centralne dane treści — łatwa podmiana.
+import heroPortrait from "@/assets/hero-portrait.jpg";
+import officeInterior from "@/assets/office-interior.jpg";
+import contactStill from "@/assets/contact-still.jpg";
+import leafMark from "@/assets/leaf-mark.png";
 
 export const ASSETS = {
-  heroPortrait: "/assets/hero/psycholog.jpg",
-  aboutPortrait: "/assets/placeholders/o-mnie.jpg",
-  gabinet1: "/assets/gabinet/gabinet-1.jpg",
-  gabinet2: "/assets/gabinet/gabinet-2.jpg",
+  heroPortrait,
+  aboutPortrait: heroPortrait,
+  gabinet1: officeInterior,
+  gabinet2: officeInterior,
+  officeInterior,
+  contactStill,
+  leafMark,
 };
 
 export const PERSON = {
