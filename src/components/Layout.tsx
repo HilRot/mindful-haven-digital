@@ -23,6 +23,19 @@ const Layout = () => {
       <main className="flex-1">
         <Outlet />
       </main>
+      <div
+        aria-hidden
+        className="relative w-full overflow-hidden border-t border-border/60 bg-gradient-soft"
+        style={{ height: "clamp(220px, 26vw, 340px)" }}
+      >
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=70"
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+      </div>
       <Footer />
     </div>
   );

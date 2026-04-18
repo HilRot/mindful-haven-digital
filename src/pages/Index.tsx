@@ -216,10 +216,7 @@ const Index = () => {
         <div className="grid items-center gap-14 md:grid-cols-12">
           <Reveal className="md:col-span-5">
             <div className="relative">
-              <div className="absolute -left-6 -top-10 z-0 font-display text-7xl font-extralight text-primary/20 md:-left-10 md:-top-14 md:text-9xl">
-                02
-              </div>
-              <div className="absolute -right-5 -top-5 h-full w-full rounded-sm border border-primary/30" />
+              <div className="absolute -left-4 -top-4 h-full w-full border border-primary/40" aria-hidden />
               <img
                 src={ASSETS.aboutPortrait}
                 alt="Portret psychologa"
@@ -325,15 +322,6 @@ const Index = () => {
                 </Reveal>
               </div>
 
-              <Reveal delay={300}>
-                <button
-                  onClick={goToContact}
-                  className="group mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background transition-all duration-500 hover:bg-primary hover:-translate-y-0.5"
-                >
-                  Umów spotkanie
-                  <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-                </button>
-              </Reveal>
             </div>
           </div>
         </div>
