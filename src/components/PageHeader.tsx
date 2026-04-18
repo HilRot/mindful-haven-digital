@@ -35,11 +35,6 @@ const PageHeader = ({ eyebrow, title, intro, index }: Props) => (
           )}
         </div>
         <div className="hidden md:flex flex-col items-end gap-4 pt-2">
-          {index && (
-            <span className="font-display text-6xl font-extralight text-primary/30 lg:text-8xl">
-              {index}
-            </span>
-          )}
           <img src={ASSETS.leafMark} alt="" aria-hidden className="h-12 w-12 opacity-70" />
         </div>
       </div>
