@@ -5,7 +5,7 @@ import { ASSETS, EDUKACJA } from "@/data/site";
 const OMnie = () => {
   return (
     <>
-      <PageHeader eyebrow="O mnie" title="Słucham, zanim zacznę rozumieć." />
+      <PageHeader eyebrow="O mnie" title="Słucham zanim zacznę rozumieć." index="03" />
 
       <section className="container-prose py-24 md:py-32">
         <div className="grid gap-14 md:grid-cols-12">

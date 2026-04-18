@@ -257,44 +257,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* KONTAKT */}
-      <section id="kontakt" className="bg-foreground text-background scroll-mt-24">
-        <div className="container-prose py-24 md:py-32">
-          <Reveal><p className="eyebrow !text-primary-muted">Kontakt</p></Reveal>
-          <Reveal delay={80}>
-            <h2 className="mt-6 max-w-3xl font-display text-3xl font-light leading-tight md:text-5xl">
-              Dziękuję, że chcesz się skontaktować. Odpiszę najszybciej, jak to możliwe.
-            </h2>
-          </Reveal>
+      {/* KONTAKT — ciepły, jasny, zachęcający */}
+      <section id="kontakt" className="relative overflow-hidden bg-gradient-soft scroll-mt-24 border-t border-border/60">
+        <div className="pointer-events-none absolute -left-32 top-1/4 h-[420px] w-[420px] rounded-full bg-primary/[0.08] blur-3xl animate-blob" aria-hidden />
+        <div className="container-prose relative py-24 md:py-32">
+          <div className="grid items-center gap-14 md:grid-cols-12 md:gap-16">
+            <Reveal className="md:col-span-5">
+              <div className="relative">
+                <div className="absolute -left-4 -top-4 h-full w-full border border-primary/40" aria-hidden />
+                <img
+                  src={ASSETS.contactStill}
+                  alt="Filiżanka herbaty z lawendą — zaproszenie do rozmowy"
+                  loading="lazy"
+                  width={1280}
+                  height={960}
+                  className="relative z-10 aspect-[4/5] w-full object-cover shadow-soft"
+                />
+                <div className="absolute -bottom-6 -right-6 z-20 flex aspect-square w-24 items-center justify-center bg-background/95 backdrop-blur-sm shadow-soft md:w-32">
+                  <img src={ASSETS.leafMark} alt="" aria-hidden className="h-3/5 w-3/5 object-contain" />
+                </div>
+              </div>
+            </Reveal>
 
-          <div className="mt-16 grid gap-12 md:grid-cols-3">
-            <Reveal delay={120}>
-              <div>
-                <Phone className="h-5 w-5 text-primary-muted" />
-                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-background/60">Telefon</p>
-                <a href={CONTACT.phoneHref} className="mt-2 block font-display text-xl font-light hover:text-primary-muted transition-colors">
-                  {CONTACT.phone}
-                </a>
+            <div className="md:col-span-7">
+              <Reveal><p className="eyebrow">Kontakt</p></Reveal>
+              <Reveal delay={80}>
+                <h2 className="mt-6 font-display text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
+                  Dziękuję, że chcesz{" "}
+                  <span className="text-primary" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+                    się skontaktować.
+                  </span>
+                  <br className="hidden md:block" /> Odpiszę najszybciej, jak to możliwe.
+                </h2>
+              </Reveal>
+
+              <div className="mt-12 space-y-px border-y border-border/70">
+                <Reveal delay={120}>
+                  <a href={CONTACT.phoneHref} className="group flex items-center gap-5 border-b border-border/70 py-5 transition-colors hover:bg-primary/5">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary"><Phone className="h-4 w-4" /></span>
+                    <span className="flex-1">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Telefon</span>
+                      <span className="mt-1 block font-display text-lg font-light text-foreground md:text-xl">{CONTACT.phone}</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-primary opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+                  </a>
+                </Reveal>
+                <Reveal delay={180}>
+                  <a href={CONTACT.emailHref} className="group flex items-center gap-5 border-b border-border/70 py-5 transition-colors hover:bg-primary/5">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary"><Mail className="h-4 w-4" /></span>
+                    <span className="flex-1 min-w-0">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">E-mail</span>
+                      <span className="mt-1 block font-display text-lg font-light text-foreground md:text-xl break-all">{CONTACT.email}</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-primary opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+                  </a>
+                </Reveal>
+                <Reveal delay={240}>
+                  <Link to="/gabinet" className="group flex items-center gap-5 py-5 transition-colors hover:bg-primary/5">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary"><MapPin className="h-4 w-4" /></span>
+                    <span className="flex-1">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Gabinety</span>
+                      <span className="mt-1 block font-display text-lg font-light text-foreground md:text-xl">Warszawa · Kraków</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-primary opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+                  </Link>
+                </Reveal>
               </div>
-            </Reveal>
-            <Reveal delay={200}>
-              <div>
-                <Mail className="h-5 w-5 text-primary-muted" />
-                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-background/60">E-mail</p>
-                <a href={CONTACT.emailHref} className="mt-2 block font-display text-xl font-light hover:text-primary-muted transition-colors break-all">
-                  {CONTACT.email}
-                </a>
-              </div>
-            </Reveal>
-            <Reveal delay={280}>
-              <div>
-                <MapPin className="h-5 w-5 text-primary-muted" />
-                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-background/60">Gabinety</p>
-                <Link to="/gabinet" className="mt-2 block font-display text-xl font-light hover:text-primary-muted transition-colors">
-                  Warszawa · Kraków
-                </Link>
-              </div>
-            </Reveal>
+
+              <Reveal delay={300}>
+                <button
+                  onClick={goToContact}
+                  className="group mt-10 inline-flex items-center gap-3 rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background transition-all duration-500 hover:bg-primary hover:-translate-y-0.5"
+                >
+                  Umów spotkanie
+                  <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+                </button>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
