@@ -7,8 +7,9 @@ const Gabinet = () => {
     <>
       <PageHeader
         eyebrow="Gabinet"
-        title="Dwa miejsca, jedna atmosfera spokoju."
+        title="Dwa miejsca jedna atmosfera spokoju."
         intro="Lorem ipsum dolor sit amet. Spotykamy się w cichych, kameralnych przestrzeniach, w których łatwo się wyciszyć."
+        index="02"
       />
 
       {/* Lokalizacje */}

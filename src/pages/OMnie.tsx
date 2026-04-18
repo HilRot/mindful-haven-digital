@@ -5,7 +5,7 @@ import { ASSETS, EDUKACJA } from "@/data/site";
 const OMnie = () => {
   return (
     <>
-      <PageHeader eyebrow="O mnie" title="Słucham, zanim zacznę rozumieć." />
+      <PageHeader eyebrow="O mnie" title="Słucham zanim zacznę rozumieć." index="03" />
 
       <section className="container-prose py-24 md:py-32">
         <div className="grid gap-14 md:grid-cols-12">
@@ -50,8 +50,25 @@ const OMnie = () => {
               <Reveal><p className="eyebrow">Edukacja</p></Reveal>
               <Reveal delay={80}>
                 <h2 className="mt-4 font-display text-3xl font-light leading-tight md:text-5xl">
-                  Wykształcenie i ciągły rozwój.
+                  Wykształcenie{" "}
+                  <span className="text-primary" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+                    i ciągły rozwój.
+                  </span>
                 </h2>
+              </Reveal>
+              <Reveal delay={140}>
+                <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+                  Praca z drugim człowiekiem wymaga nie tylko wiedzy, ale i ciągłego
+                  zgłębiania siebie. Regularnie uczestniczę w szkoleniach, konferencjach
+                  i superwizji, by łączyć rzetelność kliniczną z uważnością na to,
+                  co indywidualne.
+                </p>
+              </Reveal>
+              <Reveal delay={200}>
+                <div className="mt-8 flex items-center gap-3">
+                  <img src={ASSETS.leafMark} alt="" aria-hidden className="h-8 w-8 opacity-70" />
+                  <span className="text-xs uppercase tracking-[0.25em] text-primary">stała superwizja</span>
+                </div>
               </Reveal>
             </div>
             <div className="md:col-span-8">

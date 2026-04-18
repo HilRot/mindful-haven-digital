@@ -7,8 +7,9 @@ const Obszary = () => {
     <>
       <PageHeader
         eyebrow="Obszary działania"
-        title="Tematy, z którymi pracuję."
+        title="Tematy z którymi pracuję."
         intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Każdy proces dostosowuję do indywidualnej sytuacji i potrzeb."
+        index="01"
       />
 
       <section className="container-prose py-24 md:py-32">
