@@ -9,6 +9,7 @@ import Obszary from "./pages/Obszary";
 import Gabinet from "./pages/Gabinet";
 import OMnie from "./pages/OMnie";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
