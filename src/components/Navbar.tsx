@@ -29,10 +29,22 @@ const Navbar = () => {
 
   const goToContact = (e: React.MouseEvent) => {
     e.preventDefault();
+    setOpen(false);
     if (location.pathname !== "/") {
       navigate("/#kontakt");
     } else {
-      document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
+      const el = document.getElementById("kontakt");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
   };
 
