@@ -96,14 +96,14 @@ const Navbar = () => {
         <button
           aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-background md:hidden animate-fade-in">
+        <div className="border-t border-border/60 bg-background lg:hidden animate-fade-in">
           <nav className="container-prose flex flex-col gap-1 py-6">
             {links.map((l) => (
               <NavLink
