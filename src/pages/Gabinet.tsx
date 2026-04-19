@@ -14,7 +14,7 @@ const Gabinet = () => {
 
       {/* Lokalizacje */}
       <section className="container-prose py-24 md:py-32">
-        <div className="grid gap-16 md:grid-cols-2 md:gap-12">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-12">
           {GABINETY.map((g, i) => (
             <Reveal key={g.city} delay={i * 100}>
               <article className="group">
@@ -43,11 +43,11 @@ const Gabinet = () => {
       {/* Cennik */}
       <section className="bg-gradient-soft border-t border-border/60">
         <div className="container-prose py-24 md:py-32">
-          <div className="grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-4">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-4">
               <Reveal><p className="eyebrow">Cennik</p></Reveal>
               <Reveal delay={80}>
-                <h2 className="mt-4 font-display text-3xl font-light leading-tight md:text-5xl">
+                <h2 className="mt-4 font-display text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
                   Przejrzyste warunki współpracy.
                 </h2>
               </Reveal>
@@ -57,7 +57,7 @@ const Gabinet = () => {
                 </p>
               </Reveal>
             </div>
-            <div className="md:col-span-8">
+            <div className="lg:col-span-8">
               <ul className="divide-y divide-border border-y border-border">
                 {CENNIK.map((item, i) => (
                   <Reveal as="li" key={item.name} delay={i * 60}>
