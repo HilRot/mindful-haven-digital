@@ -29,10 +29,22 @@ const Navbar = () => {
 
   const goToContact = (e: React.MouseEvent) => {
     e.preventDefault();
+    setOpen(false);
     if (location.pathname !== "/") {
       navigate("/#kontakt");
     } else {
-      document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
+      const el = document.getElementById("kontakt");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
   };
 
@@ -61,6 +73,7 @@ const Navbar = () => {
               key={l.to}
               to={l.to}
               end={l.to === "/"}
+              onClick={l.to === "/" ? goHome : undefined}
               className={({ isActive }) =>
                 cn(
                   "link-underline text-sm font-medium tracking-wide transition-colors",
@@ -97,6 +110,7 @@ const Navbar = () => {
                 key={l.to}
                 to={l.to}
                 end={l.to === "/"}
+                onClick={l.to === "/" ? goHome : undefined}
                 className={({ isActive }) =>
                   cn(
                     "py-3 text-base font-medium",
