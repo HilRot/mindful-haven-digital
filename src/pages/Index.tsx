@@ -256,7 +256,7 @@ const Index = () => {
       </section>
 
       {/* KONTAKT — ciepły, jasny, zachęcający */}
-      <section id="kontakt" className="relative overflow-hidden bg-gradient-soft scroll-mt-24 border-t border-border/60">
+      <section className="relative overflow-hidden bg-gradient-soft border-t border-border/60">
         <div className="pointer-events-none absolute -left-32 top-1/4 h-[420px] w-[420px] rounded-full bg-primary/[0.08] blur-3xl animate-blob" aria-hidden />
         <div className="container-prose relative py-24 md:py-32">
           <div className="grid items-center gap-14 md:grid-cols-12 md:gap-16">
@@ -278,6 +278,7 @@ const Index = () => {
             </Reveal>
 
             <div className="md:col-span-7">
+              <span id="kontakt" className="block scroll-mt-24" aria-hidden />
               <Reveal><p className="eyebrow">Kontakt</p></Reveal>
               <Reveal delay={80}>
                 <h2 className="mt-6 font-display text-3xl font-light leading-[1.1] tracking-tight md:text-5xl">
