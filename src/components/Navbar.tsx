@@ -67,7 +67,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <NavLink
               key={l.to}
