@@ -87,4 +87,4 @@ export const EDUKACJA = [
 
 // Maks. 850 znaków
 export const EDUKACJA_INTRO =
-  "Praca z drugim człowiekiem wymaga nie tylko wiedzy, ale i ciągłego zgłębiania siebie. Regularnie uczestniczę w szkoleniach, konferencjach i superwizji, by łączyć rzetelność kliniczną z uważnością na to, co indywidualne.";
+  "Praca z drugim człowiekiem wymaga nie tylko rzetelnej wiedzy, ale przede wszystkim ciągłego zgłębiania siebie i uważnej obecności. Regularnie uczestniczę w szkoleniach, konferencjach oraz superwizji klinicznej, by łączyć aktualną wiedzę psychologiczną z wrażliwością na to, co w człowieku indywidualne i niepowtarzalne. Wierzę, że dobry psychoterapeuta to ten, który nigdy nie przestaje się uczyć — zarówno od swoich nauczycieli i superwizorów, jak i od osób, które obdarzają go zaufaniem podczas spotkań. Każda historia, którą słyszę w gabinecie, uczy mnie pokory wobec złożoności ludzkiego doświadczenia. Dlatego inwestuję czas w rozwój kompetencji w nurcie integracyjnym, pracy z traumą, ciałem oraz w obszarze psychoonkologii, łącząc różne perspektywy terapeutyczne w spójną, dopasowaną do osoby praktykę.";
