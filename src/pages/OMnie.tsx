@@ -8,9 +8,9 @@ const OMnie = () => {
       <PageHeader eyebrow="O mnie" title="Słucham zanim zacznę rozumieć." index="03" />
 
       <section className="container-prose py-24 md:py-32">
-        <div className="grid gap-14 md:grid-cols-12">
-          <Reveal className="md:col-span-5">
-            <div className="relative">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+          <Reveal className="lg:col-span-5">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
               <div className="absolute -left-5 -top-5 h-full w-full rounded-sm bg-primary/10" />
               <img
                 src={ASSETS.aboutPortrait}
@@ -23,7 +23,7 @@ const OMnie = () => {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="md:col-span-7 md:pl-8">
+          <Reveal delay={120} className="lg:col-span-7 lg:pl-8">
             <p className="text-base leading-relaxed text-foreground/85 md:text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -45,8 +45,8 @@ const OMnie = () => {
       {/* Edukacja */}
       <section className="bg-gradient-soft border-t border-border/60">
         <div className="container-prose py-20 md:py-28 lg:py-32">
-          <div className="grid gap-10 md:grid-cols-12 md:gap-10 lg:gap-12 md:items-start">
-            <div className="md:col-span-5">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
+            <div className="lg:col-span-5">
               <Reveal><p className="eyebrow">Edukacja</p></Reveal>
               <Reveal delay={80}>
                 <h2 className="mt-4 font-display text-3xl font-light leading-tight sm:text-4xl lg:text-5xl">
@@ -68,7 +68,7 @@ const OMnie = () => {
                 </div>
               </Reveal>
             </div>
-            <div className="md:col-span-7 lg:sticky lg:top-28">
+            <div className="lg:col-span-7 lg:sticky lg:top-28">
               <ol className="space-y-px">
                 {EDUKACJA.map((e, i) => (
                   <Reveal as="li" key={e} delay={i * 60}>
