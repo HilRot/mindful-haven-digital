@@ -45,11 +45,11 @@ const OMnie = () => {
       {/* Edukacja */}
       <section className="bg-gradient-soft border-t border-border/60">
         <div className="container-prose py-24 md:py-32">
-          <div className="grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-4">
+          <div className="grid gap-12 md:grid-cols-12 md:items-start">
+            <div className="md:col-span-5">
               <Reveal><p className="eyebrow">Edukacja</p></Reveal>
               <Reveal delay={80}>
-                <h2 className="mt-4 font-display text-3xl font-light leading-tight md:text-5xl">
+                <h2 className="mt-4 font-display text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
                   Wykształcenie{" "}
                   <span className="text-primary" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>
                     i ciągły rozwój.
@@ -57,7 +57,7 @@ const OMnie = () => {
                 </h2>
               </Reveal>
               <Reveal delay={140}>
-                <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+                <p className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-base">
                   {EDUKACJA_INTRO.slice(0, 850)}
                 </p>
               </Reveal>
@@ -68,11 +68,11 @@ const OMnie = () => {
                 </div>
               </Reveal>
             </div>
-            <div className="md:col-span-8">
+            <div className="md:col-span-7 md:sticky md:top-28">
               <ol className="space-y-px">
                 {EDUKACJA.map((e, i) => (
                   <Reveal as="li" key={e} delay={i * 60}>
-                    <div className="flex gap-6 border-t border-border py-6 last:border-b">
+                    <div className="flex gap-6 border-t border-border py-8 last:border-b">
                       <span className="font-display text-xs font-medium tracking-[0.2em] text-primary pt-1">
                         {String(i + 1).padStart(2, "0")}
                       </span>
