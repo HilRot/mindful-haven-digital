@@ -1,6 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
-import { ASSETS, EDUKACJA } from "@/data/site";
+import { ASSETS, EDUKACJA, EDUKACJA_INTRO } from "@/data/site";
 
 const OMnie = () => {
   return (
@@ -58,10 +58,7 @@ const OMnie = () => {
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Praca z drugim człowiekiem wymaga nie tylko wiedzy, ale i ciągłego
-                  zgłębiania siebie. Regularnie uczestniczę w szkoleniach, konferencjach
-                  i superwizji, by łączyć rzetelność kliniczną z uważnością na to,
-                  co indywidualne.
+                  {EDUKACJA_INTRO.slice(0, 850)}
                 </p>
               </Reveal>
               <Reveal delay={200}>

@@ -83,6 +83,8 @@ export const EDUKACJA = [
   "Szkoła Psychoterapii — całościowe szkolenie w nurcie integracyjnym",
   "Studia podyplomowe z psychoonkologii",
   "Kurs interwencji kryzysowej",
-  "Liczne szkolenia z zakresu pracy z traumą i ciałem",
-  "Stała superwizja kliniczna",
 ];
+
+// Maks. 850 znaków
+export const EDUKACJA_INTRO =
+  "Praca z drugim człowiekiem wymaga nie tylko wiedzy, ale i ciągłego zgłębiania siebie. Regularnie uczestniczę w szkoleniach, konferencjach i superwizji, by łączyć rzetelność kliniczną z uważnością na to, co indywidualne.";
