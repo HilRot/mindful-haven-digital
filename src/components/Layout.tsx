@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { ASSETS } from "@/data/site";
 
 const Layout = () => {
   const { pathname, hash } = useLocation();
@@ -29,7 +30,7 @@ const Layout = () => {
         style={{ height: "clamp(220px, 26vw, 340px)" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=70"
+          src={ASSETS.gabinet1}
           alt=""
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover opacity-90"
