@@ -30,7 +30,7 @@ const Layout = () => {
         style={{ height: "clamp(220px, 26vw, 340px)" }}
       >
         <img
-          src={ASSETS.gabinet1}
+          src={ASSETS.footerPlaceholder}
           alt=""
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover opacity-90"

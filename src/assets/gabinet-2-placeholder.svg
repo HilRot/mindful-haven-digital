@@ -1,0 +1,10 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#f8fafc" />
+  <rect x="120" y="120" width="1040" height="720" rx="20" fill="#dbeafe" />
+  <text x="640" y="500" font-family="Inter, Arial, sans-serif" font-size="42" fill="#1e3a8a" text-anchor="middle" dominant-baseline="middle">
+    Gabinet image 2
+  </text>
+  <text x="640" y="560" font-family="Inter, Arial, sans-serif" font-size="18" fill="#93c5fd" text-anchor="middle" dominant-baseline="middle">
+    Swap this file when you add the real Kraków photo.
+  </text>
+</svg>

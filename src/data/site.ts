@@ -1,15 +1,19 @@
 // Centralne dane treści — łatwa podmiana.
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import officeInterior from "@/assets/office-interior.jpg";
+import footerPlaceholder from "@/assets/footer-placeholder.svg";
+import gabinet1Placeholder from "@/assets/gabinet-1-placeholder.svg";
+import gabinet2Placeholder from "@/assets/gabinet-2-placeholder.svg";
 import contactStill from "@/assets/contact-still.jpg";
 import leafMark from "@/assets/leaf-mark.png";
 
 export const ASSETS = {
   heroPortrait,
   aboutPortrait: heroPortrait,
-  gabinet1: officeInterior,
-  gabinet2: officeInterior,
+  gabinet1: gabinet1Placeholder,
+  gabinet2: gabinet2Placeholder,
   officeInterior,
+  footerPlaceholder,
   contactStill,
   leafMark,
 };
