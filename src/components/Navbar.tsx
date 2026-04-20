@@ -59,12 +59,7 @@ const Navbar = () => {
     >
       <div className="container-prose flex h-20 items-center justify-between">
         <Link to="/" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground font-display text-sm font-semibold tracking-wider">
-            LI
-          </span>
-          <span className="font-display text-base font-medium tracking-tight">
-            Lorem Ipsum
-          </span>
+          <img src={new URL("../assets/logo-placeholder.svg", import.meta.url).href} alt="Logo" className="h-12" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

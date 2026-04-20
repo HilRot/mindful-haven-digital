@@ -1,0 +1,14 @@
+<svg width="360" height="120" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="360" height="120" fill="#f5f5f5" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <!-- Logo circle placeholder -->
+  <circle cx="30" cy="60" r="18" fill="#000" opacity="0.1"/>
+  <text x="30" y="68" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#666">LI</text>
+  
+  <!-- Logo text placeholder -->
+  <text x="70" y="70" font-family="Arial, sans-serif" font-size="20" font-weight="500" fill="#333">Logo Placeholder</text>
+  
+  <!-- Dimensions label -->
+  <text x="180" y="110" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#999">360x120px</text>
+</svg>
